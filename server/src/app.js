@@ -1,10 +1,13 @@
 const express = require('express');
+const cors = require('cors')
 const categoryRoutes = require('./routes/categoryRoutes');
 const subcategoryRoutes = require('./routes/subcategoryRoutes');
 const duaRoutes = require('./routes/duaRoutes');
 
 const app = express();
 const PORT = 4000;
+
+app.use(cors());
 
 // Routes
 app.use('/categories', categoryRoutes);
