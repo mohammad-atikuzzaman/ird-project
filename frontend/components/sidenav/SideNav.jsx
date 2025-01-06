@@ -7,6 +7,7 @@ import Category from "../categories/Category";
 const SideNav = () => {
   const [query, setQuery] = useState("");
   const [categories, setCategories] = useState([]);
+  const [activeId, setActiveId] = useState(null);
 
   useEffect(() => {
     fetch(`http://localhost:4000/categories?q=${query}`)
@@ -32,7 +33,7 @@ const SideNav = () => {
       </section>
       <nav className="p-4 overflow-y-scroll h-[80%]">
         {categories.map((category) => (
-          <Category key={category.id} category={category} />
+          <Category key={category.id} category={category} activeId={activeId} setActiveId={setActiveId} />
         ))}
       </nav>
     </aside>
