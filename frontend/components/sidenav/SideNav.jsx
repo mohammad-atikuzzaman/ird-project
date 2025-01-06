@@ -17,7 +17,7 @@ const SideNav = () => {
   }, [query]);
 
   return (
-    <aside className="min-w-[25%] bg-white  m-4 sticky top-[6rem]  rounded-xl overflow-hidden">
+    <aside className="min-w-[25%] bg-white  m-4 rounded-xl overflow-hidden">
       <h2 className="p-4 bg-green-600 text-white text-center">Categories</h2>
       <section className="w-full flex items-center justify-center">
         <input
@@ -30,7 +30,7 @@ const SideNav = () => {
           <p> Search by Categories</p>
         </div>
       </section>
-      <nav className="p-4 overflow-y-auto h-[80%]">
+      <nav className="p-4 overflow-y-scroll h-[80%]">
         {categories.map((category) => (
           <Category key={category.id} category={category} />
         ))}

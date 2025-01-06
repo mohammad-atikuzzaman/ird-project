@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import duaIcon from "@/public/duaTitelimg.png";
 import SubCategories from "./SubCategories";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Category = ({ category }) => {
+  const path = usePathname();
+  console.log(path);
   const {
     cat_icon,
     cat_id,
@@ -23,9 +26,14 @@ const Category = ({ category }) => {
 
   return (
     <div className="rounded-lg mb-4">
-      <Link href={`/dua/${cat_id}`}
+      <Link
+        href={`/dua/${cat_id}`}
         onClick={toggleAccordion}
-        className="w-full rounded-lg p-4 flex items-center justify-between hover:bg-gray-100"
+        className={
+          path === `/dua/${cat_id}`
+            ? "bg-gray-200 w-full rounded-lg p-4 flex items-center justify-between"
+            : "w-full rounded-lg p-4 flex items-center justify-between hover:bg-gray-100"
+        }
       >
         <section className="flex items-center gap-2">
           <Image src={duaIcon} alt="icon" />
@@ -39,14 +47,12 @@ const Category = ({ category }) => {
         </section>
         <p className="border-l pl-2">
           {no_of_dua}
-          <br/>
+          <br />
           <span className="text-gray-400"> Duas</span>
         </p>
       </Link>
 
-      {isOpen && (
-        <SubCategories catId={cat_id}/>
-      )}
+      {isOpen && <SubCategories catId={cat_id} />}
     </div>
   );
 };

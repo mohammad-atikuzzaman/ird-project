@@ -8,7 +8,7 @@ const SubCategories = ({ catId }) => {
       .then((res) => res.json())
       .then((data) => setSubCategories(data));
   }, [catId]);
-  console.log(subCategories);
+  
   return (
     <div className="border-l-2 border-dotted border-green-600 space-y-4 ml-4">
       {subCategories.map((subcategory) => (
