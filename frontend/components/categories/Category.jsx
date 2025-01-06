@@ -33,7 +33,7 @@ const Category = ({ category, activeId, setActiveId }) => {
         }}
         className={
           path === `/dua/${cat_id}`
-            ? "bg-gray-200 w-full rounded-lg p-4 flex items-center justify-between"
+            ? "bg-gray-200 text-green-500 w-full rounded-lg p-4 flex items-center justify-between"
             : "w-full rounded-lg p-4 flex items-center justify-between hover:bg-gray-100"
         }
       >

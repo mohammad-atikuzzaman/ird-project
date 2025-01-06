@@ -31,7 +31,9 @@ const DuaCard = ({ post, sl }) => {
     <article className="rounded-xl text-sm space-y-4 p-4 m-4 bg-white">
       <section className="flex items-center space-x-4">
         <Image src={titelImage} alt="dua image" />
-        <h2 className="text-green-500 font-semibold">{sl+1}. {dua_name_en} </h2>
+        <h2 className="text-green-500 font-semibold">
+          {sl + 1}. {dua_name_en}{" "}
+        </h2>
       </section>
       <p>{top_en} </p>
       <p className="text-2xl">{dua_arabic}</p>
@@ -43,7 +45,12 @@ const DuaCard = ({ post, sl }) => {
         <br />
         <span>{refference_en}</span>
       </p>
-      <Audio audio={audio} />
+      {audio && (
+        <div>
+          <Audio audio={audio} />
+          <div></div>
+        </div>
+      )}
     </article>
   );
 };
