@@ -10,11 +10,11 @@ const Audio = ({ audio }) => {
   if (!audio) return null;
 
   const handleTogglePlay = () => {
-    if (audioRef.current) {
+    if (audioRef?.current) {
       if (isPlaying) {
-        audioRef.current.pause();
+        audioRef?.current.pause();
       } else {
-        audioRef.current.play();
+        audioRef?.current.play();
       }
       setIsPlaying(!isPlaying);
     }
@@ -30,8 +30,8 @@ const Audio = ({ audio }) => {
       </button>
       {/* Hidden audio element */}
       <audio ref={audioRef}>
-        <source src={audio} type="audio/mpeg" />
-        <source src={audio} type="audio/ogg" />
+        <source src={audio? audio: null} type="audio/mpeg" />
+        <source src={audio? audio: null} type="audio/ogg" />
       </audio>
     </div>
   );

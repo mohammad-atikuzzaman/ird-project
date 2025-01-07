@@ -33,9 +33,9 @@ const SideNav = () => {
       </section>
 
       <nav className="p-4 overflow-y-auto h-[65vh]">
-        {categories.map((category) => (
+        {categories?.map((category) => (
           <Category
-            key={category.id}
+            key={category?.id}
             category={category}
             activeId={activeId}
             setActiveId={setActiveId}

@@ -11,9 +11,9 @@ const SubCategories = ({ catId }) => {
   
   return (
     <div className="border-l-2 border-dotted border-green-600 space-y-4 ml-4">
-      {subCategories.map((subcategory) => (
-        <Link key={subcategory.id} className="block pl-4 " href="">
-          {subcategory.subcat_name_en}
+      {subCategories?.map((subcategory) => (
+        <Link key={subcategory?.id} className="block pl-4 " href={`/dua/${subcategory?.id}`}>
+          {subcategory?.subcat_name_en}
         </Link>
       ))}
     </div>
